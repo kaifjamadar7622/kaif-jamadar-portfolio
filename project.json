@@ -1,0 +1,26 @@
+{
+  "overview": "World-class AI Product Portfolio for Kaif Jamadar — an AI engineer and product builder. Features a premium dark SaaS aesthetic with glassmorphism, Framer Motion animations, and detailed case studies of 4 AI projects.",
+  "features": [
+    "Premium dark hero with animated gradient, floating cards, and KJ avatar",
+    "Detailed AI project case studies (MindWell, Acoustic Artistry, CivilLink, Biometric)",
+    "Product Thinking section showcasing PRDs, user flows, and AI design frameworks",
+    "Animated experience timeline with 4 roles",
+    "Categorized skills grid across 7 domains",
+    "Design Philosophy section",
+    "Contact section with live LinkedIn, GitHub, email, and resume links",
+    "Sticky navbar with active section highlighting",
+    "Loading screen animation",
+    "Fully responsive mobile-first layout"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "ai",
+    "dark-theme",
+    "glassmorphism",
+    "framer-motion",
+    "premium",
+    "saas"
+  ],
+  "last_updated": "2026-05-14T13:42:18.542Z"
+}

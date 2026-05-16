@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk";
+    --font-body: "DM Sans";
+    --font-mono: "Geist Mono";
+    --radius: 0.625rem;
+
+    --background: 0.98 0.005 260;
+    --foreground: 0.15 0.01 260;
+    --card: 0.99 0.005 260;
+    --card-foreground: 0.15 0.01 260;
+    --popover: 0.99 0.005 260;
+    --popover-foreground: 0.15 0.01 260;
+
+    --primary: 0.7 0.18 195;
+    --primary-foreground: 0.98 0.005 195;
+
+    --secondary: 0.95 0.01 260;
+    --secondary-foreground: 0.25 0.01 260;
+    --muted: 0.95 0.01 260;
+    --muted-foreground: 0.5 0.01 260;
+
+    --accent: 0.7 0.18 195;
+    --accent-foreground: 0.98 0.005 195;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 25;
+
+    --border: 0.9 0.01 260;
+    --input: 0.9 0.01 260;
+    --ring: 0.7 0.18 195;
+
+    --chart-1: 0.7 0.18 195;
+    --chart-2: 0.55 0.15 145;
+    --chart-3: 0.4 0.1 280;
+    --chart-4: 0.65 0.18 70;
+    --chart-5: 0.75 0.15 25;
+
+    --sidebar: 0.98 0.005 260;
+    --sidebar-foreground: 0.15 0.01 260;
+    --sidebar-primary: 0.7 0.18 195;
+    --sidebar-primary-foreground: 0.98 0.005 195;
+    --sidebar-accent: 0.95 0.01 260;
+    --sidebar-accent-foreground: 0.25 0.01 260;
+    --sidebar-border: 0.9 0.01 260;
+    --sidebar-ring: 0.7 0.18 195;
+  }
+
+  .dark {
+    --background: 0.145 0.014 260;
+    --foreground: 0.95 0.01 260;
+    --card: 0.18 0.014 260;
+    --card-foreground: 0.95 0.01 260;
+    --popover: 0.22 0.014 260;
+    --popover-foreground: 0.95 0.01 260;
+
+    --primary: 0.7 0.18 195;
+    --primary-foreground: 0.145 0.014 260;
+
+    --secondary: 0.22 0.02 260;
+    --secondary-foreground: 0.85 0.01 260;
+    --muted: 0.22 0.02 260;
+    --muted-foreground: 0.55 0.01 260;
+
+    --accent: 0.7 0.18 195;
+    --accent-foreground: 0.145 0.014 260;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.145 0.014 260;
+
+    --border: 0.28 0.02 260;
+    --input: 0.28 0.02 260;
+    --ring: 0.7 0.18 195;
+
+    --chart-1: 0.7 0.18 195;
+    --chart-2: 0.6 0.15 145;
+    --chart-3: 0.55 0.12 280;
+    --chart-4: 0.75 0.18 70;
+    --chart-5: 0.65 0.18 25;
+
+    --sidebar: 0.18 0.014 260;
+    --sidebar-foreground: 0.95 0.01 260;
+    --sidebar-primary: 0.7 0.18 195;
+    --sidebar-primary-foreground: 0.145 0.014 260;
+    --sidebar-accent: 0.22 0.02 260;
+    --sidebar-accent-foreground: 0.85 0.01 260;
+    --sidebar-border: 0.28 0.02 260;
+    --sidebar-ring: 0.7 0.18 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "DM Sans";
+    src: url("/assets/fonts/DMSans.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Geist Mono";
+    src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+    font-display: swap;
+  }
+
+  /* Glass effect utility */
+  .glass {
+    background: oklch(var(--card) / 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid oklch(var(--border) / 0.2);
+  }
+
+  .glass-dark {
+    background: oklch(var(--card) / 0.5);
+    backdrop-filter: blur(12px);
+    border: 1px solid oklch(var(--border) / 0.15);
+  }
+
+  /* Gradient accent text */
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary)),
+      oklch(var(--accent))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Elevated shadow hierarchy */
+  .shadow-elevated {
+    box-shadow: 0 20px 40px oklch(var(--primary) / 0.08);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 4px 12px oklch(var(--primary) / 0.04);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Noise texture overlay for depth */
+  .noise-overlay {
+    position: relative;
+  }
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow button */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary) / 0.2),
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .btn-glow:hover::after {
+    opacity: 1;
+  }
+
+  /* Gradient border */
+  .gradient-border {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary) / 0.5),
+      oklch(var(--border) / 0.2)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      oklch(var(--border) / 0.6),
+      transparent
+    );
+  }
+
+  /* Card hover glow shimmer */
+  .card-hover {
+    transition: box-shadow 0.3s ease, transform 0.2s ease, border-color 0.2s
+      ease;
+  }
+  .card-hover:hover {
+    box-shadow: 0 0 0 1px oklch(var(--primary) / 0.15), 0 12px 32px
+      oklch(var(--primary) / 0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Subtle pulse for primary elements */
+  @keyframes subtle-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  .animate-subtle-pulse {
+    animation: subtle-pulse 3s ease-in-out infinite;
+  }
+
+  /* Glow ring on focus for interactive cards */
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 2px oklch(var(--primary) / 0.5);
+    border-color: oklch(var(--primary) / 0.6);
+  }
+
+  /* Primary link hover underline */
+  .link-underline {
+    position: relative;
+    text-decoration: none;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background: oklch(var(--primary));
+    transition: width 0.2s ease;
+  }
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Icon glow on hover */
+  .icon-glow {
+    transition: filter 0.2s ease;
+  }
+  .icon-glow:hover {
+    filter: drop-shadow(0 0 6px oklch(var(--primary) / 0.6));
+  }
+
+  /* Contact card ambient glow variant */
+  .contact-card-glow:hover {
+    box-shadow: 0 0 0 1px oklch(var(--primary) / 0.25), 0 8px 24px
+      oklch(var(--primary) / 0.06), inset 0 1px 0
+      oklch(var(--foreground) / 0.04);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground));
+  }
+}
