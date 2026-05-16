@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     category: "Healthcare AI",
     featured: true,
     color: "from-cyan-500/10 to-blue-500/10",
-    githubUrl: "https://github.com/kaifjamadar",
+    githubUrl: "https://github.com/kaifjamadar7622",
   },
   {
     id: "acoustic-artistry",
@@ -75,7 +75,8 @@ export const PROJECTS: Project[] = [
     category: "Generative AI",
     featured: true,
     color: "from-violet-500/10 to-purple-500/10",
-    githubUrl: "https://github.com/kaifjamadar",
+    githubUrl: "https://github.com/kaifjamadar7622",
+    demoUrl: "https://huggingface.co/spaces/kaifjamadar7622/acoustic-artistry",
   },
   {
     id: "civillink",
@@ -101,7 +102,7 @@ export const PROJECTS: Project[] = [
     category: "B2B Platform",
     featured: true,
     color: "from-emerald-500/10 to-teal-500/10",
-    githubUrl: "https://github.com/kaifjamadar",
+    githubUrl: "https://github.com/kaifjamadar7622",
   },
   {
     id: "biometric-payroll",
@@ -120,7 +121,7 @@ export const PROJECTS: Project[] = [
     category: "HR Tech",
     featured: false,
     color: "from-amber-500/10 to-orange-500/10",
-    githubUrl: "https://github.com/kaifjamadar",
+    githubUrl: "https://github.com/kaifjamadar7622",
   },
 ];
 

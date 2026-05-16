@@ -1,9 +1,37 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 
 interface KJAvatarProps {
   size?: "sm" | "md" | "lg";
   className?: string;
   withGlow?: boolean;
+}
+
+function AvatarContent({ textSize }: { textSize: string }) {
+  const [showImage, setShowImage] = useState(true);
+  const imgSrc = "/assets/images/kaif.jpeg"; // place your photo here
+
+  return showImage ? (
+    <img
+      src={imgSrc}
+      alt="Kaif Jamadar"
+      className="relative z-10 w-full h-full object-cover"
+      onError={() => setShowImage(false)}
+    />
+  ) : (
+    <span
+      className={`relative z-10 font-display font-bold ${textSize} tracking-tight select-none`}
+      style={{
+        background:
+          "linear-gradient(135deg, oklch(0.75 0.18 195), oklch(0.95 0.01 260))",
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+      }}
+    >
+      KJ
+    </span>
+  );
 }
 
 const SIZE_MAP = {
@@ -63,19 +91,8 @@ export default function KJAvatar({
                 "radial-gradient(ellipse at 30% 20%, oklch(0.7 0.18 195 / 0.12) 0%, transparent 65%)",
             }}
           />
-          {/* Initials */}
-          <span
-            className={`relative z-10 font-display font-bold ${s.text} tracking-tight select-none`}
-            style={{
-              background:
-                "linear-gradient(135deg, oklch(0.75 0.18 195), oklch(0.95 0.01 260))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            KJ
-          </span>
+          {/* Profile image with fallback to initials */}
+          <AvatarContent textSize={s.text} />
         </div>
       </motion.div>
 

@@ -15,9 +15,9 @@ const CONTACT_CARDS = [
     id: "github",
     icon: Github,
     platform: "GitHub",
-    handle: "kaifjamadar",
+    handle: "kaifjamadar7622",
     description: "Explore the code",
-    href: "https://github.com/kaifjamadar",
+    href: "https://github.com/kaifjamadar7622",
     external: true,
   },
   {
